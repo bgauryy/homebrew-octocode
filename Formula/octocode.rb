@@ -3,8 +3,8 @@ require "language/node"
 class Octocode < Formula
   desc "Interactive CLI installer for octocode-mcp — MCP server & skills setup"
   homepage "https://octocode.ai"
-  url "https://registry.npmjs.org/octocode/-/octocode-1.0.1.tgz"
-  sha256 "a19a5b480d0d0a181e50a08d6a7e044753f35f0fccdad7c61a20fa39a9803aaa"
+  url "https://registry.npmjs.org/octocode/-/octocode-2.0.0.tgz"
+  sha256 "b3cd113eff00ec8331590c6539f00b7cc88140bd42633226767d62d8445710cf"
   license "MIT"
 
   depends_on "node"
