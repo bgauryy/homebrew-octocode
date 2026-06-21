@@ -22,7 +22,7 @@ brew install octocode
 Verify:
 
 ```sh
-octocode --version      # → octocode v1.5.3
+octocode --version      # → octocode v1.0.0
 octocode --help
 ```
 
@@ -41,7 +41,7 @@ brew upgrade octocode
 
 ## What you get
 
-The command is **`octocode`** (not `octocode-cli`). It is two things in one binary:
+The command is **`octocode`**. It is two things in one binary:
 
 1. **A setup wizard** — install the Octocode MCP server and Agent Skills into your
    editor/agent, manage GitHub OAuth, and keep configs in sync across clients.
@@ -73,7 +73,7 @@ Top-level flags: `--version`/`-v`, `--help`/`-h`, `--json`/`-j`.
 - **Local** — `localSearchCode` (ripgrep), `localFindFiles`, `localGetFileContent`,
   `localViewStructure`
 - **LSP** — `lspGotoDefinition`, `lspFindReferences`, `lspCallHierarchy`
-- **Package** — `packageSearch` (npm / PyPI → source repo)
+- **Package** — `packageSearch` (npm → source repo)
 
 ### Quick start
 
@@ -98,7 +98,7 @@ The formula installs from the npm registry tarball, so publish to npm first.
 1. **Publish the package** (must stay a zero-dependency esbuild bundle):
 
    ```sh
-   cd packages/octocode-cli && yarn verify && yarn build
+   cd packages/octocode && yarn verify && yarn build
    npm whoami        # expect: bgauryy
    npm publish
    ```
@@ -107,14 +107,14 @@ The formula installs from the npm registry tarball, so publish to npm first.
    tarball and rewrites `url` + the real `sha256`:
 
    ```sh
-   ./scripts/update-formula.sh 1.5.3
+   ./scripts/update-formula.sh 1.0.0
    brew style Formula/octocode.rb
    ```
 
 3. **Commit and push:**
 
    ```sh
-   git commit -am "octocode 1.5.3"
+   git commit -am "octocode 1.0.0"
    git push
    ```
 

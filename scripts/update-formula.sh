@@ -6,8 +6,8 @@
 #         (defaults to the latest published version if no arg is given)
 set -euo pipefail
 
-VER="${1:-$(npm view octocode-cli version)}"
-TARBALL="https://registry.npmjs.org/octocode-cli/-/octocode-cli-${VER}.tgz"
+VER="${1:-$(npm view octocode version)}"
+TARBALL="https://registry.npmjs.org/octocode/-/octocode-${VER}.tgz"
 FORMULA="$(dirname "$0")/../Formula/octocode.rb"
 
 echo "→ version: ${VER}"
@@ -18,7 +18,7 @@ echo "→ sha256:  ${SHA}"
 
 # Portable in-place sed (works on both BSD/macOS and GNU sed).
 sed -i.bak -E \
-  -e "s|octocode-cli-[0-9]+\.[0-9]+\.[0-9]+\.tgz|octocode-cli-${VER}.tgz|" \
+  -e "s|octocode-[0-9]+\.[0-9]+\.[0-9]+\.tgz|octocode-${VER}.tgz|" \
   -e "s|^( *sha256 )\".*\"|\1\"${SHA}\"|" \
   "${FORMULA}"
 rm -f "${FORMULA}.bak"
